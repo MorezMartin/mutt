@@ -1,0 +1,50 @@
+set editor = "vim -c DelBlankMutt -c :delete -c :0put -c MuttHlAnswer -c :0 -c ':normal o' -c :startinsert"
+set my_name = "Martin Morez"
+set locale="fr_FR"
+
+source ~/.mutt/colors
+
+
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+set signature="~/.mutt/signature"
+
+
+set folder = imap://mail.mh-receptions.com/
+set imap_user = m.morez@mh-receptions.com
+set imap_pass = da2ed21ef3cc
+set spoolfile = =INBOX
+mailboxes = +INBOX +Sent
+set sort_aux=last-date-received
+
+set record= +Sent
+set smtp_pass = da2ed21ef3cc
+set realname = 'Martin Morez'
+set from = m.morez@mh-receptions.com
+set use_from = yes
+set smtp_url= "smtp://$imap_user:$imap_pass@mail.mh-receptions.com:26/"
+set ssl_force_tls = no
+set ssl_starttls = no
+
+set sort=threads
+set sort_browser=reverse-date
+set sort_aux=reverse-date-received
+set pager_index_lines 	= 15 	# number of index lines to show
+set pager_context 		= 3     # number of context lines to show
+set pager_stop          = yes   # don't go to next message automatically
+set menu_scroll         = yes   # scroll in menus
+set tilde = yes # show tildes like in vim
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+set fast_reply = yes
+set include = yes
+set reply_to = yes
+set indent_string='    <span style="color:black">[></span>  '
+set date_format="%d/%m/%Y à %H:%M:%S"
+set attribution='    <span style="color:black">[></span>  Le %d, <span style="color:black">%n</span> a écrit :'
+set mime_forward
+set mime_forward_rest=yes
+set forward_format="Tr -> %a : %s"
+
+bind generic ',' "search-opposite"

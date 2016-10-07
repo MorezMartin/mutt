@@ -1,0 +1,21 @@
+text/html; w3m -v -F -T text/html %s; edit=vim; compose=vim; nametemplate=%s.html; copiousoutput; needsterminal
+#application/msword; antiword %s; copiousoutput
+#application/vnd.ms-excel; xls2csv '%s'; copiousoutput; description="MS Excel sheet";
+#application/vnd.ms-powerpoint; catppt '%s'; copiousoutput; description="MS PowerPoint presentation";
+#application/pdf; acroread %s
+text/html; view_attachment %s html
+#image/jpg; feh %s
+#image/jpeg; feh %s
+#image/png; feh %s
+#image/gif; feh %s
+#image/tiff; feh %s
+image/*; muttimg %s ; copiousoutput
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Open Office Stuff
+application/vnd.oasis.opendocument.database; soffice -no-oosplash -base '%s'; edit=soffice -no-oosplash -base '%s'; test=test -n "$DISPLAY"; description="OpenDocument Database"; nametemplate=%s.odb
+application/vnd.oasis.opendocument.chart; soffice -no-oosplash -calc '%s'; edit=soffice -no-oosplash -calc '%s'; test=test -n "$DISPLAY"; description="OpenDocument Chart"; nametemplate=%s.odc
+application/vnd.oasis.opendocument.spreadsheet; soffice -no-oosplash -calc '%s'; edit=soffice -no-oosplash -calc '%s'; test=test -n "$DISPLAY"; description="OpenDocument Spreadsheet"; nametemplate=%s.ods
+application/vnd.oasis.opendocument.spreadsheet-template; soffice -no-oosplash -calc '%s'; edit=soffice -no-oosplash -calc '%s'; test=test -n "$DISPLAY"; description="OpenDocument Spreadsheet Template"; nametemplate=%s.ots
+application/vnd.oasis.opendocument.graphics; soffice -no-oosplash -draw '%s'; edit=soffice -no-oosplash -draw '%s'; test=test -n "$DISPLAY"; description="OpenDocument Drawing"; nametemplate=%s.odg
+applic
